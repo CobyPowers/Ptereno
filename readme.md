@@ -43,8 +43,11 @@ https://pterodactyl.app/admin/api)
 
 > If you find any issues with the library, please make a new issue or pull request.
 
-Currently, there is no official documentation, but you can always use the
-[deno documentation generator](https://doc.deno.land/https/deno.land/x/ptereno/mod.ts).
+Currently, there is no official documentation, but you can always use the deno documentation generator.
+
+- [Application](https://doc.deno.land/https/deno.land/x/ptereno/lib/models/Application.ts)
+- [Client](https://doc.deno.land/https/deno.land/x/ptereno/lib/models/Client.ts)
+- [ServerSocket](https://doc.deno.land/https/deno.land/x/ptereno/lib/models/ServerSocket.ts)
 
 # Examples
 
