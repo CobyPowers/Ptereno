@@ -55,7 +55,7 @@ Below are a few basic examples, but you can find the rest [here](https://github.
 The example below shows a how to get information from the client account.
 
 ```ts
-import { Client } from "https://deno.land/x/ptereno@1.0.0/mod.ts";
+import { Client } from "https://deno.land/x/ptereno/mod.ts";
 
 const client = new Client("<URL>", "<TOKEN>");
 
@@ -78,7 +78,7 @@ console.log(account);
 The example below shows how you can get user information from an application.
 
 ```ts
-import { Application } from "https://deno.land/x/ptereno@1.0.0/mod.ts";
+import { Application } from "https://deno.land/x/ptereno/mod.ts";
 
 const app = new Application("<URL>", "<TOKEN>");
 
@@ -106,7 +106,7 @@ console.log(user);
 The example below demonstrates the server socket system.
 
 ```ts
-import { Client } from "https://deno.land/x/ptereno@1.0.0/mod.ts";
+import { Client } from "https://deno.land/x/ptereno/mod.ts";
 
 const client = new Client("<URL>", "<TOKEN>");
 const ws = client.joinServerSocket("<SERVER>");
