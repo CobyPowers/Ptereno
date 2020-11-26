@@ -829,10 +829,10 @@ export default class Client {
    * @param {string} server The server uuid
    */
   async getBackups(server: string) {
-    return await this.http.request<BackupList>(
+    return (await this.http.request<BackupList>(
       Method.GET,
       `/client/servers/${server}/backups`
-    );
+    )).data;
   }
 
   /**
