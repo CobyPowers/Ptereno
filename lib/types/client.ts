@@ -271,12 +271,12 @@ export interface SubUserAttributes {
 export interface BackupList {
   object: "list";
   data: Array<Backup>;
+  meta: PaginationMeta;
 }
 
 export interface Backup {
   object: "backup";
   attributes: BackupAttributes;
-  meta: PaginationMeta;
 }
 
 export interface BackupAttributes {
