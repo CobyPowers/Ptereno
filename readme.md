@@ -39,9 +39,37 @@ require more fine-tuned access and contains more information about servers, eggs
 nests, nodes, and other structures. (You can create API keys here:
 https://pterodactyl.app/admin/api)
 
+## Response Structure
+
+> You do not need to understand the information listed here to use the
+> library, this is purely optional.
+
+The *raw* HTTP responses from the panel typically follow a common format,
+containing the object type, the object data or attributes, and, pagination metadata (only seen in lists). Each method call will try
+and return only the most significant data, stripping the object type 
+from the response.
+
+Key | Value
+--- | -----
+object | A string denoting the object type
+data* | The response data object
+attributes* | The response attributes object
+meta? | Additional object information (pagination, client specific fields, etc...)
+
+`*` - Mutually exclusive
+`?` - Optional, may not appear in the response
+
+For example, a raw response containing the keys `object`, `data` and `meta` will not be modified in the method call.
+However, a raw response containing the keys `object` and `attributes` will
+be modified in the method call to only include the *value* of `attributes`
+since the *value* of `object` is implied. 
+
+
 # Documentation
 
 > If you find any issues with the library, please make a new issue or pull request.
+
+It is highly recommended that you cache the library before you begin working on your projects. `https://deno.land/x/ptereno/mod.ts`
 
 Currently, there is no official documentation, but you can always use the deno documentation generator.
 
