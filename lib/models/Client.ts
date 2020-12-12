@@ -41,6 +41,8 @@ import {
   TwoFactorQR,
   TwoFactorTokenList,
   UpdateEmailOptions,
+  UpdateFileCHMODOptions,
+  UpdateFilesCHMODOptions,
   UpdatePasswordOptions,
   UpdateScheduleOptions,
   UpdateUserOptions,
@@ -481,6 +483,36 @@ export default class Client {
         },
       }
     );
+  }
+
+  /**
+   * Updates the chmod for multiple files.
+   * 
+   * @param {string} server The server uuid
+   */
+  async updateFilesCHMOD(server: string, { files, directory }: UpdateFilesCHMODOptions) {
+    await this.http.request(
+      Method.POST,
+      `/client/servers/${server}/files/chmod`,
+      {
+        body: {
+          root: directory || "/",
+          files
+        }
+      }
+    );
+  }
+
+  /**
+   * Updates the chmod for a single file.
+   * 
+   * @param {string} server The server uuid
+   */
+  async updateFileCHMOD(server: string, { file, directory }: UpdateFileCHMODOptions) {
+    await this.updateFilesCHMOD(server, {
+      directory,
+      files: [file]
+    });
   }
 
   /**

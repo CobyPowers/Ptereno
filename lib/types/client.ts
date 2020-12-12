@@ -164,6 +164,7 @@ export interface File {
 export interface FileAttributes {
   name: string;
   mode: string;
+  mode_bits: string;
   size: number;
   is_file: boolean;
   is_symlink: boolean;
@@ -625,6 +626,43 @@ export interface FolderOptions {
    * The root directory of the folder
    */
   directory?: string;
+}
+
+export interface UpdateFileCHMODOptions {
+  /**
+   * The file options.
+   */
+  file: CHMODFile;
+  /**
+   * The root directory to access the files from.
+   * 
+   * @default "/"
+   */
+  directory?: string;
+}
+
+export interface UpdateFilesCHMODOptions {
+  /**
+   * An array of file options.
+   */
+  files: Array<CHMODFile>;
+  /**
+   * The root directory to access the files from.
+   * 
+   * @default "/"
+   */
+  directory?: string;
+}
+
+export interface CHMODFile {
+  /**
+   * The name of the file.
+   */
+  file: string;
+  /**
+   * The 3 digit access mode bits.
+   */
+  mode: string;
 }
 
 export interface NewScheduleOptions {
