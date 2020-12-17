@@ -504,7 +504,7 @@ export default class Application {
   async rotateDatabasePWD(server: number, id: number) {
     await this.http.request(
       Method.POST,
-      `/application/servesr/${server}/databases/${id}/reset-password`,
+      `/application/servers/${server}/databases/${id}/reset-password`,
     );
   }
 
