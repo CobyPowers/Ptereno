@@ -900,7 +900,7 @@ export default class Client {
     return (
       await this.http.request<Backup>(
         Method.GET,
-        `/client/servesr/${server}/backups/${uuid}`
+        `/client/servers/${server}/backups/${uuid}`
       )
     ).attributes;
   }
