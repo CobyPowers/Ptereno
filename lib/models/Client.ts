@@ -1001,6 +1001,17 @@ export default class Client {
   }
 
   /**
+   * Changes the docker image on a given server.
+   */
+  // TODO: Implement `changeDockerImage` when released.
+  async changeDockerImage(server: string) {
+    await this.http.request(
+      Method.PUT,
+      `/client/servers/${server}/settings/docker-image`
+    )
+  }
+
+  /**
    * Retrieves server information.
    *
    * @param {string} server The server uuid
