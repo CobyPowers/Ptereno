@@ -928,7 +928,7 @@ export default class Client {
    */
    async lockBackup(server: string, uuid: string) {
     return (
-      await this.http.request<SignedURL>(
+      await this.http.request<Backup>(
         Method.POST,
         `/client/servers/${server}/backups/${uuid}/lock`
       )
@@ -943,7 +943,7 @@ export default class Client {
    */
    async restoreBackup(server: string, uuid: string) {
     return (
-      await this.http.request<SignedURL>(
+      await this.http.request<Backup>(
         Method.POST,
         `/client/servers/${server}/backups/${uuid}/restore`
       )
@@ -1033,7 +1033,6 @@ export default class Client {
   /**
    * Changes the docker image on a given server.
    */
-  // TODO: Implement `changeDockerImage` when released.
   async changeDockerImage(server: string, dockerImage: string) {
     await this.http.request(
       Method.PUT,
