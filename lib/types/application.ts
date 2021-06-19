@@ -476,6 +476,17 @@ export interface NewAllocationOptions {
   alias?: string;
 }
 
+export interface NodeDeployabilityOptions {
+  /**
+   * The amount of memory in megabytes
+   */
+  memory: number;
+  /**
+   * The amount of disk space in megabytes
+   */
+  disk: number;
+}
+
 export interface NewNodeOptions {
   /**
    * The node name
@@ -527,7 +538,7 @@ export interface NewNodeOptions {
    */
   memoryOverallocate?: number;
   /**
-   * The total amount of disk space
+   * The total amount of disk space in megabytes
    */
   disk: number;
   /**

@@ -921,7 +921,37 @@ export default class Client {
   }
 
   /**
-   * Deletes a server backup.
+   * Locks a server backup. This also unlocks backups that are already locked.
+   *
+   * @param {string} server The server uuid
+   * @param {string} uuid The backup uuid
+   */
+   async lockBackup(server: string, uuid: string) {
+    return (
+      await this.http.request<SignedURL>(
+        Method.POST,
+        `/client/servers/${server}/backups/${uuid}/lock`
+      )
+    ).attributes;
+  }
+
+  /**
+   * Restores a server backup.
+   *
+   * @param {string} server The server uuid
+   * @param {string} uuid The backup uuid
+   */
+   async restoreBackup(server: string, uuid: string) {
+    return (
+      await this.http.request<SignedURL>(
+        Method.POST,
+        `/client/servers/${server}/backups/${uuid}/restore`
+      )
+    ).attributes;
+  }
+
+  /**
+   * Restores a server backup.
    *
    * @param {string} server The server uuid
    * @param {string} uuid The backup uuid
@@ -1004,10 +1034,15 @@ export default class Client {
    * Changes the docker image on a given server.
    */
   // TODO: Implement `changeDockerImage` when released.
-  async changeDockerImage(server: string) {
+  async changeDockerImage(server: string, dockerImage: string) {
     await this.http.request(
       Method.PUT,
-      `/client/servers/${server}/settings/docker-image`
+      `/client/servers/${server}/settings/docker-image`,
+      {
+        params: {
+          "docker_image": dockerImage
+        }
+      }
     )
   }
 

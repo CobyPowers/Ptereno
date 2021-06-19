@@ -27,6 +27,7 @@ import {
   NewUserOptions,
   Node,
   NodeConfiguration,
+  NodeDeployabilityOptions,
   NodeList,
   NodeParameters,
   Server,
@@ -213,6 +214,21 @@ export default class Application {
     await this.http.request(
       Method.DELETE,
       `/application/nodes/${node}/allocations/${id}`,
+    );
+  }
+
+  /**
+   * Determines which nodes can be used to allocate a given amount of resources.
+   * 
+   * @param {NodeDeployabilityOptions} [params] The resource parameters
+   */
+   async getNodeDeployability(params?: NodeDeployabilityOptions) {
+    return await this.http.request<NodeList>(
+      Method.GET,
+      "/application/nodes/deployable",
+      {
+        params,
+      },
     );
   }
 
