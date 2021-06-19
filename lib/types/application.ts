@@ -476,7 +476,7 @@ export interface NewAllocationOptions {
   alias?: string;
 }
 
-export interface NodeDeployabilityOptions {
+export interface NodeDeployabilityParameters {
   /**
    * The amount of memory in megabytes
    */

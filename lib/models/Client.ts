@@ -1038,7 +1038,7 @@ export default class Client {
       Method.PUT,
       `/client/servers/${server}/settings/docker-image`,
       {
-        params: {
+        body: {
           "docker_image": dockerImage
         }
       }

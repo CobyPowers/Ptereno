@@ -27,7 +27,7 @@ import {
   NewUserOptions,
   Node,
   NodeConfiguration,
-  NodeDeployabilityOptions,
+  NodeDeployabilityParameters,
   NodeList,
   NodeParameters,
   Server,
@@ -220,14 +220,17 @@ export default class Application {
   /**
    * Determines which nodes can be used to allocate a given amount of resources.
    * 
-   * @param {NodeDeployabilityOptions} [params] The resource parameters
+   * @param {NodeDeployabilityParameters} [params] The resource options
    */
-   async getNodeDeployability(params?: NodeDeployabilityOptions) {
+   async getNodeDeployability(params: NodeDeployabilityParameters) {
     return await this.http.request<NodeList>(
       Method.GET,
       "/application/nodes/deployable",
       {
-        params,
+        query: {
+          memory: params.memory.toString(),
+          disk: params.disk.toString()
+        }
       },
     );
   }
