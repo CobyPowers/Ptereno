@@ -3,7 +3,7 @@ name: ".github/templates/BUG_REPORT.md"
 about: Create a report to help us improve
 title: ''
 labels: ''
-assignees: Alanexei
+assignees: CobyPowers
 
 ---
 
