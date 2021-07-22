@@ -79,7 +79,7 @@ Currently, there is no official documentation, but you can always use the deno d
 
 # Examples
 
-Below are a few basic examples, but you can find the rest [here](https://github.com/Alanexei/Ptereno/tree/master/examples).
+Below are a few basic examples, but you can find the rest [here](https://github.com/CobyPowers/Ptereno/tree/master/examples).
 
 ## Client
 
@@ -96,8 +96,8 @@ console.log(account);
 //  {
 //    id: 0,
 //    admin: true,
-//    username: "Alanexei",
-//    email: "alan@alanexei.dev",
+//    username: "CobyPowers",
+//    email: "admin@cobypowers.com",
 //    first_name: "Alan",
 //    last_name: "Dev",
 //    language: "en"
