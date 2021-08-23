@@ -146,7 +146,7 @@ ws.on("open", () => {
   console.log("Socket Open");
 });
 
-ws.on("close" (code, reason) => {
+ws.on("close", (code, reason) => {
   console.log(`Socket Closed - ${code} ${reason}`);
 });
 
